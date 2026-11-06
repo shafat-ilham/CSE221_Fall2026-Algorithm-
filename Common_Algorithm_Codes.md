@@ -47,6 +47,26 @@ def merge(a, b):
 </td></tr>
 </table>
 
+### Flow
+
+```mermaid
+flowchart TD
+    A(["merge(a, b)"]) --> B["i = 0, j = 0<br/>out = empty"]
+    B --> C{"i < n and j < m ?"}
+    C -- yes --> D{"a[i] < b[j] ?"}
+    D -- yes --> E["append a[i] to out<br/>i++"]
+    D -- no --> F["append b[j] to out<br/>j++"]
+    E --> C
+    F --> C
+    C -- no --> G{"i < n ?"}
+    G -- yes --> H["append rest of a<br/>(a[i:] to the end)"]
+    G -- no --> I
+    H --> I{"j < m ?"}
+    I -- yes --> J["append rest of b<br/>(b[j:] to the end)"]
+    I -- no --> K
+    J --> K(["return out"])
+```
+
 # Mergesort Algorithm
 
 ## key actions
