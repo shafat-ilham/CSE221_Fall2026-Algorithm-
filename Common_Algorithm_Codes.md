@@ -1,17 +1,27 @@
 
 # Merging (Approach 1)
--two pointer merging. Commonly used in mergesort.
+
+- two pointer merging. Commonly used in mergesort.
+
 ## key actions
-- Hold a pointer for each arrays.
-- create a joint array(out) to return as the sort.
-- loop until any pointer runs out. append smallest value and push the index of the smallest value to next.
+
+- Hold a pointer for each array.
+- create a joint array (`out`) to return as the sort.
+- loop until any pointer runs out. append the smallest value and move that pointer forward.
 - loop separately to scrape the remainders.
 
-### Code
+### Code and Flow
+
 <table>
-<th>Java</th><th>Python</th>
-<tr><td>
-    
+<tr>
+<th>Code</th>
+<th>Flow</th>
+</tr>
+<tr>
+<td valign="top">
+
+**Java**
+
 ```java
 public static int[] merge(int[] a, int[] b){
     int i=0, j=0, idx=0, n=a.length, m=b.length;
@@ -26,8 +36,8 @@ public static int[] merge(int[] a, int[] b){
 }
 ```
 
-</td><td>
-    
+**Python**
+
 ```python
 def merge(a, b):
     i = j = 0
@@ -44,10 +54,8 @@ def merge(a, b):
     return out
 ```
 
-</td></tr>
-</table>
-
-### Flow
+</td>
+<td valign="top">
 
 ```mermaid
 flowchart TD
@@ -66,6 +74,10 @@ flowchart TD
     I -- no --> K
     J --> K(["return out"])
 ```
+
+</td>
+</tr>
+</table>
 
 # Mergesort Algorithm
 
