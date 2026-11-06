@@ -1,27 +1,16 @@
-
 # Merging (Approach 1)
-
-- two pointer merging. Commonly used in mergesort.
-
+-two pointer merging. Commonly used in mergesort.
 ## key actions
-
-- Hold a pointer for each array.
-- create a joint array (`out`) to return as the sort.
-- loop until any pointer runs out. append the smallest value and move that pointer forward.
+- Hold a pointer for each arrays.
+- create a joint array(out) to return as the sort.
+- loop until any pointer runs out. append smallest value and push the index of the smallest value to next.
 - loop separately to scrape the remainders.
 
-### Code and Flow
-
+### Code
 <table>
-<tr>
-<th>Code</th>
-<th>Flow</th>
-</tr>
-<tr>
-<td valign="top">
-
-**Java**
-
+<th>Java</th><th>Python</th>
+<tr><td>
+    
 ```java
 public static int[] merge(int[] a, int[] b){
     int i=0, j=0, idx=0, n=a.length, m=b.length;
@@ -36,8 +25,8 @@ public static int[] merge(int[] a, int[] b){
 }
 ```
 
-**Python**
-
+</td><td>
+    
 ```python
 def merge(a, b):
     i = j = 0
@@ -54,30 +43,9 @@ def merge(a, b):
     return out
 ```
 
-</td>
-<td valign="top">
-
-```mermaid
-flowchart TD
-    A(["merge(a, b)"]) --> B["i = 0, j = 0<br/>out = empty"]
-    B --> C{"i < n and j < m ?"}
-    C -- yes --> D{"a[i] < b[j] ?"}
-    D -- yes --> E["append a[i] to out<br/>i++"]
-    D -- no --> F["append b[j] to out<br/>j++"]
-    E --> C
-    F --> C
-    C -- no --> G{"i < n ?"}
-    G -- yes --> H["append rest of a<br/>(a[i:] to the end)"]
-    G -- no --> I
-    H --> I{"j < m ?"}
-    I -- yes --> J["append rest of b<br/>(b[j:] to the end)"]
-    I -- no --> K
-    J --> K(["return out"])
-```
-
-</td>
-</tr>
+</td></tr>
 </table>
+
 
 # Mergesort Algorithm
 
